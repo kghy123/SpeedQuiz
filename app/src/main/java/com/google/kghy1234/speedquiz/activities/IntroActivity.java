@@ -51,6 +51,6 @@ public class IntroActivity extends BaseActivity {
 
     @Override
     protected boolean getFullScreen() {
-        return false;
+        return true;
     }
 }

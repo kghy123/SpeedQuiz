@@ -32,7 +32,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                 }else{
                     moveActivity(target);
                 }
-
             }
         };
         handler.postDelayed(runnable, ms);
