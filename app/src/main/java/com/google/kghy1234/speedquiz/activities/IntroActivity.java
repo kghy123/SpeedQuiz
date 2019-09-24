@@ -1,6 +1,7 @@
 package com.google.kghy1234.speedquiz.activities;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -45,7 +46,12 @@ public class IntroActivity extends BaseActivity {
     }
 
     @Override
-    protected int getLayoutResource() {
+    protected Activity getActivity() {
+        return this;
+    }
+
+    @Override
+    protected Integer getLayoutResource() {
         return R.layout.activity_intro;
     }
 

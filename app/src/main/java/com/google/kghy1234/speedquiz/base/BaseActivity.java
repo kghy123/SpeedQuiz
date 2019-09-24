@@ -1,9 +1,9 @@
 package com.google.kghy1234.speedquiz.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
@@ -47,7 +47,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
-    protected abstract int getLayoutResource();
+    protected abstract Activity getActivity();
+    protected abstract Integer getLayoutResource();
     protected abstract boolean getFullScreen();
 
 }
