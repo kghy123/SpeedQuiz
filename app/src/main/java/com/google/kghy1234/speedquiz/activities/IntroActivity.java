@@ -3,19 +3,32 @@ package com.google.kghy1234.speedquiz.activities;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.google.kghy1234.speedquiz.R;
 import com.google.kghy1234.speedquiz.base.BaseActivity;
+import com.google.kghy1234.speedquiz.databinding.ActivityIntroBinding;
 
 public class IntroActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private ActivityIntroBinding binding;
 
+    @Override
+    protected void setDataBinding() {
+        binding = DataBindingUtil.setContentView(this, getLayoutResource());
+    }
+
+    @Override
+    protected void onCreate() {
+        checkPermission();
+
+        binding.introTextView.setText("테스트중");
+    }
+
+    private void checkPermission(){
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             if(checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED ||
                     checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED||

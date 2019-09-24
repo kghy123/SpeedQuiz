@@ -18,8 +18,13 @@ public abstract class BaseActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
-        setContentView(getLayoutResource());
+        //setContentView(getLayoutResource());
+        setDataBinding();
+        onCreate();
     }
+
+    protected abstract void setDataBinding();
+    protected abstract void onCreate();
 
     protected void moveActivityDelayed(final Class target, final int ms, final boolean needFinish){
 
