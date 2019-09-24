@@ -2,12 +2,14 @@ package com.google.kghy1234.speedquiz.base;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-
+    private static Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,23 @@ public abstract class BaseActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
         setContentView(getLayoutResource());
+    }
+
+    protected void moveActivityDelayed(final Class target, final int ms, final boolean needFinish){
+
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+
+                if(needFinish) {
+                    moveActivityWithFinish(target);
+                }else{
+                    moveActivity(target);
+                }
+
+            }
+        };
+        handler.postDelayed(runnable, ms);
     }
 
     protected void moveActivity(Class target){
