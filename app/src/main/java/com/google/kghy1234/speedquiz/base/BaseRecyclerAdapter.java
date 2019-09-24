@@ -1,4 +1,4 @@
-package com.google.kghy1234.baseproject.base;
+package com.google.kghy1234.speedquiz.base;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

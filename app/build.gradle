@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.google.kghy1234.baseproject"
+        applicationId "com.google.kghy1234.speedquiz"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1

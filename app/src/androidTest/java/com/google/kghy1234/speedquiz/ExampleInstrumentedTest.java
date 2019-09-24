@@ -1,4 +1,4 @@
-package com.google.kghy1234.baseproject;
+package com.google.kghy1234.speedquiz;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
