@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter {
+public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter {
 
     private Context context;
-    private ArrayList items;
+    private ArrayList<T> items;
 
-    public BaseRecyclerAdapter(Context context, ArrayList items){
+    public BaseRecyclerAdapter(Context context, ArrayList<T> items){
         this.context = context;
         this.items = items;
     }
