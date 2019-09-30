@@ -17,14 +17,10 @@ public class IntroActivity extends BaseActivity {
     private ActivityIntroBinding binding;
 
     @Override
-    protected void setDataBinding() {
-        binding = DataBindingUtil.setContentView(this, getLayoutResource());
-    }
-
-    @Override
     protected void onCreate() {
         checkPermission();
 
+        binding = getDataBinding(ActivityIntroBinding.class);
         binding.introTextView.setText("테스트중");
     }
 

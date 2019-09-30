@@ -2,7 +2,6 @@ package com.google.kghy1234.speedquiz.activities;
 
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 
 import com.google.kghy1234.speedquiz.R;
@@ -17,23 +16,21 @@ public class MainActivity extends BaseActivity {
     private ActivityMainBinding binding;
 
     @Override
-    protected void setDataBinding() {
-        binding = DataBindingUtil.setContentView(this, getLayoutResource());
-    }
-
-    @Override
     protected void onCreate() {
+        binding = getDataBinding(ActivityMainBinding.class);
         binding.themeRecycler.setLayoutManager(new GridLayoutManager(this, 2));
 
         ArrayList<String> items = new ArrayList<String>();
-        items.add("1");
-        items.add("2");
-        items.add("3");
-        items.add("4");
-        items.add("5");
+        items.add("1번 아이템");
+        items.add("2번 아이템");
+        items.add("3번 아이템");
+        items.add("4번 아이템");
+        items.add("5번 아이템");
 
-        ThemeRecyclerAdapter adapter = new ThemeRecyclerAdapter(this, items);
+        ThemeRecyclerAdapter<String> adapter = new ThemeRecyclerAdapter(this, items);
         binding.themeRecycler.setAdapter(adapter);
+
+
 
     }
 
